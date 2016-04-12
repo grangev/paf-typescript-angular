@@ -9,15 +9,17 @@ angular.module('appApp', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngTagsInput'
   ])
   .config(($routeProvider:ng.route.IRouteProvider) => {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        controllerAs: 'main'
       })
-      .when('/about', {
+      .when('/map', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'

@@ -4,17 +4,15 @@
 
 module appApp {
   export interface IMainScope extends ng.IScope {
-    awesomeThings: any[];
+    tags: any[];
   }
 
   export class MainCtrl {
 
+    public static $inject: string[] = ['$scope'];
+
     constructor (private $scope: IMainScope) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
+      $scope.tags = [];
     }
   }
 }
