@@ -24,12 +24,11 @@
           <textarea class="form-control" ng-model="form.comment" name="comment" id="comment" cols="30" rows="10" placeholder="Ajouter un commentaire..."></textarea>
         </fieldset>
         <tags-input ng-model="tags">
-          <auto-complete source=""></auto-complete>
         </tags-input>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary" ng-click="">Ajouter</button>
+        <button type="button" class="btn btn-primary" ng-click="main.save()">Ajouter</button>
       </div>
     </div>
   </div>
