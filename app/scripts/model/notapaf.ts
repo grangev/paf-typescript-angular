@@ -1,7 +1,6 @@
 module model{
 
   export interface ICoordinate{
-    id?: number;
     latitude: number;
     longitude: number;
   }
