@@ -10,7 +10,8 @@ angular.module('appApp', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngTagsInput'
+    'ngTagsInput',
+    'uiGmapgoogle-maps'
   ])
   .config(($routeProvider:ng.route.IRouteProvider) => {
     $routeProvider
@@ -19,23 +20,21 @@ angular.module('appApp', [
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/formulaire', {
+      .when('/formulaire/:namedUrl', {
         templateUrl: 'views/commentaireForm.html',
         controller: 'URLEvaluationController',
         controllerAs: 'controller'
       })
       .when('/map', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+        templateUrl: 'views/carte.html',
+        controller: 'CarteCtrl',
+        controllerAs: 'carte'
+      })
+      .when("/not_found", {
+        templateUrl: '404.html',
       })
       .otherwise({
         redirectTo: '/'
       });
-  }).run(() => {
-    $('#formUrl').on('hidden.bs.modal', function() {
-      var form: any = $(this).find('form')[0];
-      form.reset();
-    });
   }
 );

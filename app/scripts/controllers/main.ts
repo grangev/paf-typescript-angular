@@ -37,7 +37,6 @@ module appApp {
       var form: any = $('#notapafParent').find('form')[0];
       form.reset();
     }
-
   }
 }
 

@@ -24,6 +24,17 @@
             <label for="description">Description</label>
             <textarea class="form-control" ng-model="notapaf.description" name="description" id="description" cols="30" rows="10" placeholder="Ajouter un commentaire..."></textarea>
           </fieldset>
+          <fieldset class="form-group" ng-class="{ 'has-error' : notapafForm.longitude.$invalid && !notapafForm.longitude.$pristine }">
+            <label for="longitude">Longitude</label>
+            <input type="number" class="form-control" ng-model="notapaf.position.longitude" name="longitude" id="longitude" placeholder="Longitude" ng-required="true">
+            <p ng-show="notapafForm.longitude.$invalid && !notapafForm.longitude.$pristine " class="help-block">Longitude obligatoire / format incorrect.</p>
+          </fieldset>
+          <fieldset class="form-group" ng-class="{ 'has-error' : notapafForm.latitude.$invalid && !notapafForm.latitude.$pristine }">
+            <label for="latitude">Latitude</label>
+            <input type="number" class="form-control" ng-model="notapaf.position.latitude" name="latitude" id="latitude" placeholder="Latitude" ng-required="true">
+            <p ng-show="notapafForm.latitude.$invalid && !notapafForm.latitude.$pristine " class="help-block">Latitude obligatoire / format incorrect.</p>
+          </fieldset>
+          <label>Mots-clés</label>
           <tags-input ng-model="notapaf.keywords" ng-required="true">
           </tags-input>
         </div>

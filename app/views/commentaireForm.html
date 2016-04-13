@@ -1,10 +1,11 @@
 <div class="container">
 
   <div class="row">
-    <h1>Evalutation</h1>
+    <h1>Evaluation</h1>
   </div>
 
   <div class="row">
+
     <form name="myForm">
       <!-- URL -->
       <div class="form-group">
@@ -12,39 +13,40 @@
         <input id="url" name="url" class="form-control" type="url" ng-model="controller.currentItem.url" readonly/>
       </div>
 
-      <!-- rated -->
+      <!--rated -->
       <div class="form-group">
-        <label for="rated">Note</label>
-        <input id="rated" class="form-control" type="number" ng-model="controller.currentItem.rated" readonly/>
+        <label class="control-label">Note moyenne</label>
+        <star-rating style="display:block" ng-model="controller.currentItem.rated" ro="true"></star-rating>
       </div>
 
       <!-- Comment -->
       <div class="form-group">
-        <label for="comment" class="control-label">Liste des commentaires</label>
-        <ul id="comment">
-          <li ng-repeat="comment in controller.currentItem.comment track by $index">{{comment}}</li>
+        <label for="comment" class="control-label">Commentaires</label>
+        <ul id="comment" class="list-group">
+          <li ng-repeat="comment in controller.currentItem.comments track by $index" class="list-group-item">
+            <span class="badge">
+              {{comment.date | date:'dd/MM/yyyy'}}</span>
+            <cite style="white-space: pre">{{comment.comment}}</cite>
+            <star-rating style="display:block" ng-model="comment.rate" ro="false"></star-rating>
+          </li>
         </ul>
-        </div>
+      </div>
       <div>
         <div class="form-horizontal">
           <div class="form-group" ng-class="{ 'has-success': myForm.commentArea.$valid }">
-            <textarea id="commentArea" name="commentArea" class="form-control" rows="2" ng-model="controller.newComment"
+            <textarea id="commentArea" name="commentArea" class="form-control" rows="2"
+                      ng-model="controller.newComment.comment"
                       required></textarea>
-              <!--<span class="help-block"-->
-                    <!--ng-show="!myForm.commentArea.$valid">Veuillez ajouter un commentaire correct</span>-->
-            <!--<input id="commentArea" name="commentArea" class="form-control" type="url" ng-model="controller.newComment"/>-->
+
+
+            <star-rating style="display:block" ng-model="controller.newComment.rate" ro="false"></star-rating>
           </div>
+
           <div class="form-group">
             <button type="button" class="btn btn-success" ng-click="controller.addComment()">+</button>
           </div>
         </div>
       </div>
-
-      <!--<tt>myForm.url.$valid = {{myForm.url.$valid}}</tt><br/>-->
-      <!--<tt>myForm.url.$error = {{myForm.url.$error}}</tt><br/>-->
-      <!--<tt>myForm.$valid = {{myForm.$valid}}</tt><br/>-->
-      <!--<tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br/>-->
-      <!--<tt>myForm.$error.url = {{!!myForm.$error.url}}</tt><br/>-->
     </form>
   </div>
 </div>
