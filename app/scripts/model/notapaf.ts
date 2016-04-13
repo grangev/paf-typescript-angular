@@ -1,5 +1,10 @@
 module model{
 
+  export interface ICoordinate{
+    latitude: number;
+    longitude: number;
+  }
+
   export interface IComment {
     comment : string;
     rate : number;
@@ -7,6 +12,7 @@ module model{
   }
 
   export interface INotapaf {
+    id?: number;
     name: string;
     url: string;
     description: string;
@@ -14,5 +20,6 @@ module model{
     rated: number;
     keywords: string[];
     contributions: number;
+    position?: ICoordinate;
   }
 }

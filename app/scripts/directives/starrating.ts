@@ -15,7 +15,7 @@ namespace comments {
   }
 
   export class Starrating implements ng.IDirective {
-    template = '<ul class="star-rating" ng-class="{readonly: ro}">  <li ng-repeat="star in stars" class="star" ng-class="{filled: star.filled}" ng-click="toggle($index)">   <i class="fa fa-star"></i>  </li> </ul>';
+    templateUrl = '/scripts/directives/views/starrating.html';
     restrict = 'EA';
     scope={
       ratingValue:'=ngModel',
