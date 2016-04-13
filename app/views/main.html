@@ -1,23 +1,19 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div class="col-xs-6" ng-init="datas =[{nom:'url1', description:'blabla', keyword:'toto'},
+{nom:'url2', description:'blabla', keyword:'tata'},
+{nom:'url3', description:'blabla', keyword:'titi'}]">
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+  <button type="button" class="btn btn-success" ng-click="mainCtrl.getdataurl()">New url</button>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+  <br/><br/>
+  <!--<label class="label label-info">Search</label>-->
+  <input type="text" ng-model="keyword" class="form-control"><br/>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <p ng-repeat="data in datas | filter:keyword">{{data.nom}}</p>
+
+
+
+
+
+
+
 </div>

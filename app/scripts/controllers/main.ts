@@ -3,21 +3,34 @@
 'use strict';
 
 module appApp {
-  export interface IMainScope extends ng.IScope {
-    awesomeThings: any[];
-  }
+
 
   export class MainCtrl {
 
-    constructor (private $scope: IMainScope) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
+    static $inject = ['$scope', '$http'];
+
+    private dataJ : any;
+
+    constructor (private $http: ng.IHttpService) {
     }
+
+    // getdataurl(){
+    //   this.$http.get('../../data/data.json').success(
+    //     (data, status) => this.dataJ = data
+    //   );        console.log("dsgfezrg"+this.dataJ);
+    //
+    //
+    // }
   }
+
+
+
+
+
 }
 
 angular.module('appApp')
   .controller('MainCtrl', appApp.MainCtrl);
+
+
+//
