@@ -18,7 +18,7 @@ angular.module('appApp', [
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/formulaire', {
+      .when('/formulaire/:namedUrl', {
         templateUrl: 'views/commentaireForm.html',
         controller: 'URLEvaluationController',
         controllerAs: 'controller'
@@ -27,6 +27,9 @@ angular.module('appApp', [
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when("/not_found", {
+        templateUrl: '404.html',
       })
       .otherwise({
         redirectTo: '/'
