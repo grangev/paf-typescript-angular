@@ -9,7 +9,9 @@ angular.module('appApp', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngTagsInput',
+    'uiGmapgoogle-maps'
   ])
   .config(($routeProvider:ng.route.IRouteProvider) => {
     $routeProvider
@@ -24,9 +26,9 @@ angular.module('appApp', [
         controllerAs: 'controller'
       })
       .when('/map', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+        templateUrl: 'views/carte.html',
+        controller: 'CarteCtrl',
+        controllerAs: 'carte'
       })
       .when("/not_found", {
         templateUrl: '404.html',
@@ -34,4 +36,5 @@ angular.module('appApp', [
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }
+);

@@ -1,0 +1,18 @@
+<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+  <ui-gmap-markers
+    models='notapafList'
+    idkey="notapafList.id"
+    coords="'position'"
+    icon="'icon'"
+    click="carte.onMarkerClicked">
+    <ui-gmap-windows show="showWindow"
+                     templateUrl="templateUrl">
+
+    </ui-gmap-windows>
+  </ui-gmap-markers>
+
+</ui-gmap-google-map>
+
+
+
+<!--typeEvents='{expression}'-->
