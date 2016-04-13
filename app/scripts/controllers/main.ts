@@ -21,7 +21,7 @@ module appApp {
       let notapafJson = JSON.stringify(this.scope.notapaf);
       console.log(notapafJson);
       $('#formUrl').modal('hide');
-      //this.scope.notapaf = null;
+      this.scope.notapaf.keywords = [];
       var form: any = $('#notapafParent').find('form')[0];
       form.reset();
     }
