@@ -9,8 +9,7 @@ angular.module('appApp', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'ngTagsInput'
+    'ngTouch'
   ])
   .config(($routeProvider:ng.route.IRouteProvider) => {
     $routeProvider
@@ -18,6 +17,11 @@ angular.module('appApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
+      })
+      .when('/formulaire', {
+        templateUrl: 'views/commentaireForm.html',
+        controller: 'URLEvaluationController',
+        controllerAs: 'controller'
       })
       .when('/map', {
         templateUrl: 'views/about.html',

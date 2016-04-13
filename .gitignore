@@ -5,6 +5,12 @@
 /bower_components
 *.log
 
+app/scripts/**/*.js
+app/scripts/**/*.map
+test/**/*.js
+test/**/*.map
+.idea/
+
 # User-specific stuff:
 .idea/workspace.xml
 .idea/tasks.xml

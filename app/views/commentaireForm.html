@@ -1,0 +1,50 @@
+<div class="container">
+
+  <div class="row">
+    <h1>Evalutation</h1>
+  </div>
+
+  <div class="row">
+    <form name="myForm">
+      <!-- URL -->
+      <div class="form-group">
+        <label for="url" class="control-label">URL</label>
+        <input id="url" name="url" class="form-control" type="url" ng-model="controller.currentItem.url" readonly/>
+      </div>
+
+      <!-- rated -->
+      <div class="form-group">
+        <label for="rated">Note</label>
+        <input id="rated" class="form-control" type="number" ng-model="controller.currentItem.rated" readonly/>
+      </div>
+
+      <!-- Comment -->
+      <div class="form-group">
+        <label for="comment" class="control-label">Liste des commentaires</label>
+        <ul id="comment">
+          <li ng-repeat="comment in controller.currentItem.comment track by $index">{{comment}}</li>
+        </ul>
+        </div>
+      <div>
+        <div class="form-horizontal">
+          <div class="form-group" ng-class="{ 'has-success': myForm.commentArea.$valid }">
+            <textarea id="commentArea" name="commentArea" class="form-control" rows="2" ng-model="controller.newComment"
+                      required></textarea>
+              <!--<span class="help-block"-->
+                    <!--ng-show="!myForm.commentArea.$valid">Veuillez ajouter un commentaire correct</span>-->
+            <!--<input id="commentArea" name="commentArea" class="form-control" type="url" ng-model="controller.newComment"/>-->
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-success" ng-click="controller.addComment()">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!--<tt>myForm.url.$valid = {{myForm.url.$valid}}</tt><br/>-->
+      <!--<tt>myForm.url.$error = {{myForm.url.$error}}</tt><br/>-->
+      <!--<tt>myForm.$valid = {{myForm.$valid}}</tt><br/>-->
+      <!--<tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br/>-->
+      <!--<tt>myForm.$error.url = {{!!myForm.$error.url}}</tt><br/>-->
+    </form>
+  </div>
+</div>
