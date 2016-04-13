@@ -1,6 +1,3 @@
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formUrl">
-  Ajouter une url
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="formUrl" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -32,22 +29,20 @@
       </div>
     </div>
   </div>
-<div class="col-xs-6" ng-init="datas =[{nom:'url1', description:'blabla', keyword:'toto'},
-{nom:'url2', description:'blabla', keyword:'tata'},
-{nom:'url3', description:'blabla', keyword:'titi'}]">
+</div>
 
-  <button type="button" class="btn btn-success" ng-click="mainCtrl.getdataurl()">New url</button>
+<div class="col-xs-6" ng-init="datas =[{nom:'url1', description:'blabla', keywords:'toto'},
+{nom:'url2', description:'blabla', keywords:'tata'},
+{nom:'url3', description:'blabla', keywords:'titi'}]">
 
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formUrl">
+    Ajouter une url
+  </button>
   <br/><br/>
   <!--<label class="label label-info">Search</label>-->
-  <input type="text" ng-model="keyword" class="form-control"><br/>
+  <input type="text" ng-model="keywords" class="form-control"><br/>
 
-  <p ng-repeat="data in datas | filter:keyword">{{data.nom}}</p>
-
-
-
-
-
+  <p ng-repeat="data in datas | filter:keywords">{{data.nom}}</p>
 
 
 </div>

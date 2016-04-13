@@ -1,5 +1,5 @@
 [
-  {"nom":"url1", "description":"blabla", "keyword":"toto"},
-  {"nom":"url2", "description":"blabla", "keyword":"tata"},
-  {"nom":"url3", "description":"blabla", "keyword":"titi"}
+  {"name":"url1", "description":"blabla", "keywords":"toto"},
+  {"name":"url2", "description":"blabla", "keywords":"tata"},
+  {"name":"url3", "description":"blabla", "keywords":"titi"}
 ]
