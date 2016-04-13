@@ -3,6 +3,7 @@
 
 'use strict';
 module appApp {
+  import INotapaf = model.INotapaf;
   export interface IMainScope extends ng.IScope {
     notapaf: model.INotapaf;
     notapafForm: any;
@@ -18,8 +19,13 @@ module appApp {
     }
 
     private save: any = () => {
-      let notapafJson = JSON.stringify(this.scope.notapaf);
-      console.log(notapafJson);
+      let notapafList: INotapaf[] = [];
+      if(localStorage.getItem("notapaf")!=null){
+        notapafList = JSON.parse(localStorage.getItem("notapaf"));
+      }
+      notapafList.push(this.scope.notapaf);
+      localStorage.setItem("notapaf", JSON.stringify(notapafList));
+
       $('#formUrl').modal('hide');
       this.scope.notapaf.keywords = [];
       var form: any = $('#notapafParent').find('form')[0];

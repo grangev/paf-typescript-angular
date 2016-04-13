@@ -59,10 +59,14 @@ body {
   margin-top: 28px;
 }
 
+.angular-google-map-container {
+  height: 700px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    width: 80%;
   }
 
   /* Remove the padding we set earlier */
