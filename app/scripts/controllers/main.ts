@@ -1,13 +1,13 @@
 /// <reference path="../model/notapaf.ts" />
+/// <reference path="../../../typings/main.d.ts" />
 /// <reference path="../app.ts" />
 /// <reference path="../services/geturl.ts" />
 
 'use strict';
-
 module appApp {
   export interface IMainScope extends ng.IScope {
-    tags:any[];
-    notapaf:model.INotapaf;
+    notapaf: model.INotapaf;
+    notapafForm: any;
   }
 
   export class MainCtrl {
@@ -19,16 +19,18 @@ module appApp {
 
 
     constructor(private $scope:IMainScope, private service: Geturl) {
-      $scope.tags = [];
       this.scope = $scope;
       this.dataUrl =  service.dataJ;
       this.test = service.test;
     }
 
-    private save:any = () => {
-      console.log("test");
-      console.log(this.scope.notapaf);
-      console.log(this.test);
+    private save: any = () => {
+      let notapafJson = JSON.stringify(this.scope.notapaf);
+      console.log(notapafJson);
+      $('#formUrl').modal('hide');
+      //this.scope.notapaf = null;
+      var form: any = $('#notapafParent').find('form')[0];
+      form.reset();
     }
   }
 }

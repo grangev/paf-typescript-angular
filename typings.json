@@ -1,5 +1,6 @@
 {
   "ambientDependencies": {
-    "angular-material": "registry:dt/angular-material#1.0.0-rc5.0+20160317120654"
+    "angular-material": "registry:dt/angular-material#1.0.0-rc5.0+20160317120654",
+    "bootstrap": "registry:dt/bootstrap#3.3.5+20160316155526"
   }
 }

@@ -31,4 +31,10 @@ angular.module('appApp', [
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }).run(() => {
+    $('#formUrl').on('hidden.bs.modal', function() {
+      var form: any = $(this).find('form')[0];
+      form.reset();
+    });
+  }
+);
