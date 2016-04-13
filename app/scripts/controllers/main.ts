@@ -1,18 +1,31 @@
-/// <reference path="../app.ts" />
+/// <reference path="../model/notapaf.ts" />
 
 'use strict';
 
 module appApp {
-
+  export interface IMainScope extends ng.IScope {
+    tags: any[];
+    notapaf: model.INotapaf;
+  }
 
   export class MainCtrl {
 
-    static $inject = ['$scope', '$http'];
-
+    public static $inject: string[] = ['$scope', '$http'];
+    public scope: IMainScope;
     private dataJ : any;
 
-    constructor (private $http: ng.IHttpService) {
+    constructor (private $scope: IMainScope) {
+      $scope.tags = [];
+      this.scope = $scope;
     }
+
+    private save: any = () => {
+      console.log("test");
+      console.log(this.scope.notapaf);
+
+
+    //constructor (private $http: ng.IHttpService) {
+    //}
 
     // getdataurl(){
     //   this.$http.get('../../data/data.json').success(
@@ -22,15 +35,7 @@ module appApp {
     //
     // }
   }
-
-
-
-
-
 }
 
 angular.module('appApp')
   .controller('MainCtrl', appApp.MainCtrl);
-
-
-//
