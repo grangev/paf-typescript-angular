@@ -9,7 +9,8 @@ angular.module('appApp', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngTagsInput'
   ])
   .config(($routeProvider:ng.route.IRouteProvider) => {
     $routeProvider
