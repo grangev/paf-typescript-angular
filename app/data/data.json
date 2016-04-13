@@ -1,7 +1,7 @@
 [
 
   {
-    "name": "url1",
+    "name": "Google",
     "url":"http://youtube.com",
     "description": "blabla",
     "comment":["toto","toto"],
@@ -10,7 +10,7 @@
     "contributions":2
   },
   {
-    "name": "url2",
+    "name": "Facebook",
     "url":"http://youtube.com",
     "description": "blabla",
     "comment":["toto","toto"],

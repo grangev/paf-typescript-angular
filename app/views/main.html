@@ -57,7 +57,7 @@
   <!--<label class="label label-info">Search</label>-->
   <input type="text" ng-model="search.keywords" class="form-control"><br/>
 
-  <p ng-repeat="data in main.dataUrl | filter:search">{{data.name}}</p>
+  <div ng-repeat="data in main.dataUrl | filter:search"><div ng-click='main.go(data.name)'>{{data.name}}</div></div>
 
 
 </div>
