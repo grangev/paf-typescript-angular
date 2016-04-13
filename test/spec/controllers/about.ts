@@ -7,10 +7,10 @@
 describe('Controller: AboutCtrl', () => {
 
   // load the controller's module
-  beforeEach(module('appApp'));
+  beforeEach(module('service'));
 
-  var AboutCtrl: appApp.AboutCtrl,
-    scope: appApp.IAboutScope;
+  var AboutCtrl: service.AboutCtrl,
+    scope: service.IAboutScope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(($controller: ng.IControllerService, $rootScope: ng.IRootScopeService) => {

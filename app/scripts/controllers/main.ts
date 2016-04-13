@@ -5,6 +5,8 @@
 
 'use strict';
 module appApp {
+  import IHttpService = angular.IHttpService;
+  import INotapaf = model.INotapaf;
   export interface IMainScope extends ng.IScope {
     notapaf: model.INotapaf;
     notapafForm: any;
@@ -12,26 +14,30 @@ module appApp {
 
   export class MainCtrl {
 
-    public static $inject:string[] = ['$scope', '$http'];
+    public static $inject = ['$scope', '$http', 'getUrl'];
     public scope:IMainScope;
-    public dataUrl :any;
-    public test: string = "azertyuiop";
+    public service:Geturl;
+    public  dataUrl : model.INotapaf[];
 
 
-    constructor(private $scope:IMainScope, private service: Geturl) {
+    constructor(private $scope:IMainScope, private $http : IHttpService, private getUrl : Geturl) {
       this.scope = $scope;
-      this.dataUrl =  service.dataJ;
-      this.test = service.test;
+      this.service=getUrl;
+      this.service.getdataurl().then((data)=> {
+        this.dataUrl=data;
+      });
+
+
     }
 
     private save: any = () => {
-      let notapafJson = JSON.stringify(this.scope.notapaf);
-      console.log(notapafJson);
+      this.dataUrl.push(this.scope.notapaf);
+      this.scope.notapaf = {} as model.INotapaf;
       $('#formUrl').modal('hide');
-      this.scope.notapaf.keywords = [];
       var form: any = $('#notapafParent').find('form')[0];
       form.reset();
     }
+
   }
 }
 

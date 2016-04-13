@@ -7,7 +7,7 @@
 describe('Service: getUrl', () => {
 
   // load the service's module
-  beforeEach(module('appApp'));
+  beforeEach(module('service'));
 
   // instantiate service
   var getUrl;
