@@ -13,18 +13,18 @@ module appApp {
 
   export class CarteCtrl {
 
-    static $inject = ["$scope", "$location"];
+    public service:Geturl;
 
-    constructor (private $scope: IMapScope, $location:ILocationService) {
-      $scope.notapafList = [];
+    static $inject = ["$scope", "$location", "getUrl"];
+
+    constructor (private $scope: IMapScope, $location:ILocationService, private getUrl : Geturl) {
+      this.service=getUrl;
       $scope.templateUrl = '/views/markerWindow.html';
-      if(localStorage.getItem("notapaf") !== null){
-        $scope.notapafList  = JSON.parse(localStorage.getItem("notapaf"));
+      $scope.notapafList = this.service.getData();
+      if($scope.notapafList.length !== 0){
         for(let i: number = 0; i<$scope.notapafList.length; i++){
           $scope.notapafList[i].id = i;
-          $scope.notapafList[i].rated = 4;
         }
-        console.log($scope.notapafList);
       }
       $scope.map = {
         center: { latitude: 20, longitude: 3 },
