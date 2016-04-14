@@ -34,7 +34,7 @@ namespace comments {
       let found = false;
       let data:model.INotapaf[] = this.getUrl.getData();
 
-      if (data === null) {
+      if (data == null) {
         $location.path("/");
       }
 

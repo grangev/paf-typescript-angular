@@ -11,6 +11,10 @@ module model{
     date : Date;
   }
 
+  /* Constraints due to the usage of tags-input directive */
+  export interface ITag {
+    text : string;
+  }
   export interface INotapaf {
     id?: number;
     name: string;
@@ -18,7 +22,7 @@ module model{
     description: string;
     comments: IComment[];
     rated: number;
-    keywords: string[];
+    keywords: ITag[];
     contributions: number;
     position?: ICoordinate;
   }

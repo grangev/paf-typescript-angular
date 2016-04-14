@@ -53,13 +53,11 @@
           </div>
           <div class="modal-footer">
             <div type="button" class="btn btn-default" data-dismiss="modal">Annuler</div>
-            <div type="submit" class="btn btn-primary" ng-disabled="notapafForm.$invalid" ng-click="main.save()">
-              Ajouter
+          <button type="submit" class="btn btn-primary" ng-disabled="notapafForm.$invalid" ng-click="main.save()">Ajouter</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </form>
 </div>
 
@@ -70,17 +68,19 @@
   </button>
   <br/><br/>
   <!--<label class="label label-info">Search</label>-->
-  <input type="text" ng-model="search.keywords" class="form-control"><br/>
+  <input type="text" ng-model="search.keywords.text" class="form-control"><br/>
   <table class="table">
     <thead>
     <tr>
       <th>Nom</th>
       <th>URL</th>
+      <th>Keywords</th>
     </tr>
     </thead>
     <tr ng-repeat="data in main.service.data | filter:search" ng-click='main.go(data.name)'>
       <td>{{data.name}}</td>
       <td>{{data.url}}</td>
+      <td><span ng-repeat="k in data.keywords">{{k.text}} </span></td>
     </tr>
   </table>
 
