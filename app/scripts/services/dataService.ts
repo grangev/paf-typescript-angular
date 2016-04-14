@@ -30,6 +30,9 @@ module appApp {
       return this.data;
     }
 
+    clearData():void{
+      localStorage.clear();
+    }
   }
 }
 

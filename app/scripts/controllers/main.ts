@@ -38,6 +38,10 @@ module appApp {
 
 
     }
+
+    private clear : any = () => {
+      this.service.clearData();
+    }
   }
 }
 
