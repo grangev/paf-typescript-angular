@@ -45,9 +45,7 @@ namespace comments {
         }
       };
       scope.$watch('ratingValue', function(oldValue, newValue) {
-        if (newValue) {
           updateStars();
-        }
       })
     };
   }

@@ -14,9 +14,10 @@
       </div>
 
       <!--rated -->
-      <div class="form-group">
+      <div class="form-group" >
         <label class="control-label">Note moyenne</label>
-        <star-rating style="display:block" ng-model="controller.currentItem.rated" ro="true"></star-rating>
+        <star-rating ng-show="controller.currentItem.rated" style="display:block" ng-model="controller.currentItem.rated" ro="true"/>
+        <div ng-show="!controller.currentItem.rated">Aucun commentaires</div>
       </div>
 
       <!-- Comment -->
@@ -27,7 +28,7 @@
             <span class="badge">
               {{comment.date | date:'dd/MM/yyyy'}}</span>
             <cite style="white-space: pre">{{comment.comment}}</cite>
-            <star-rating style="display:block" ng-model="comment.rate" ro="false"></star-rating>
+            <star-rating style="display:block" ng-model="comment.rate" ro="true"></star-rating>
           </li>
         </ul>
       </div>

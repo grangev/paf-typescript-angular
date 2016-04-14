@@ -1,7 +1,7 @@
 /// <reference path="../model/notapaf.ts" />
 /// <reference path="../../../typings/main.d.ts" />
 /// <reference path="../app.ts" />
-/// <reference path="../services/geturl.ts" />
+/// <reference path="../services/dataService.ts" />
 
 'use strict';
 module appApp {
@@ -18,21 +18,15 @@ module appApp {
     public static $inject = ['$scope', '$http', 'getUrl', '$location'];
     public scope:IMainScope;
     public service:Geturl;
-    public  dataUrl : model.INotapaf[];
-
 
     constructor(private $scope:IMainScope, private $http : IHttpService, private getUrl : Geturl, private $location: ILocationService) {
       this.scope = $scope;
       this.service=getUrl;
-      this.service.getdataurl().then((data)=> {
-        this.dataUrl=data;
-      });
-
-
     }
 
     private save: any = () => {
-      this.dataUrl.push(this.scope.notapaf);
+      this.scope.notapaf.comments = [];
+      this.service.addData(this.scope.notapaf);
       this.scope.notapaf = {} as model.INotapaf;
       $('#formUrl').modal('hide');
       var form: any = $('#notapafParent').find('form')[0];

@@ -17,7 +17,7 @@ angular.module('appApp', [
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
+        controller: 'MainCtrl', 
         controllerAs: 'main'
       })
       .when('/formulaire/:namedUrl', {
