@@ -16,8 +16,8 @@ module appApp {
       if(localStorage.getItem("notapaf") !== null){
         $scope.notapafList  = JSON.parse(localStorage.getItem("notapaf"));
         for(let i: number = 0; i<$scope.notapafList.length; i++){
-          // $scope.notapafList[i].position.id = i;
           $scope.notapafList[i].id = i;
+          $scope.notapafList[i].rated = 4;
         }
         console.log($scope.notapafList);
       }
