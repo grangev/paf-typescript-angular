@@ -67,6 +67,7 @@ namespace comments {
       } else {
         this.currentItem.rated = 1;
       }
+      this.getUrl.persist();
     }
   }
 }

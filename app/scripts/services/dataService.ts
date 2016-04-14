@@ -29,9 +29,6 @@ module appApp {
     }
 
     addData(data:model.INotapaf):void {
-
-
-
       this.data.push(data);
       localStorage.setItem(Geturl.storage, JSON.stringify(this.data));
     }
@@ -43,6 +40,10 @@ module appApp {
     clearData():void{
       this.data=[];
       localStorage.clear();
+    }
+
+    persist() : void {
+      localStorage.setItem(Geturl.storage, JSON.stringify(this.data));
     }
 
     removeItem(name:string):void{
