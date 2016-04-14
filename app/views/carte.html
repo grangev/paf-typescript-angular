@@ -7,12 +7,13 @@
     click="carte.onMarkerClicked">
     <ui-gmap-windows show="showWindow"
                      templateUrl="templateUrl">
-
+      <div ng-non-bindable>
+        <h2><a href="/#/formulaire/{{name}}">{{name}}</a></h2>
+        <p>url: <a href="{{url}}">{{url}}</a></p>
+        <p>Description : {{description}}</p>
+        <p>Note : {{rated}}/5
+      </div>
     </ui-gmap-windows>
   </ui-gmap-markers>
 
 </ui-gmap-google-map>
-
-
-
-<!--typeEvents='{expression}'-->
