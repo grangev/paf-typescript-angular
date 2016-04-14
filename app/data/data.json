@@ -1,16 +1,15 @@
 [
-
   {
     "name": "Google",
     "url":"http://youtube.com",
     "description": "blabla",
     "comments": [
-           {"comment": "Un commentaire inutile", "rate": 3, "date": "20160102"},
-           {"comment": "Site génial", "rate": 5, "date": "20160102"},
-           {"comment": "Juste un indexeur de contenu", "rate": 1, "date": "20160102"}
+           {"comment": "Un commentaire inutile", "rate": 3, "date": "2016-04-11T13:28:56.782Z"},
+           {"comment": "Site génial", "rate": 5, "date": "2016-04-12T17:15:56.782Z"},
+           {"comment": "Juste un indexeur de contenu", "rate": 1, "date": "2016-04-13T14:00:00.000Z"}
          ],
     "rated":1,
-    "keywords": ["ploub"],
+    "keywords": [{"text": "ploub"}],
     "contributions":2
   },
   {
@@ -18,12 +17,12 @@
     "url":"http://facebook.com",
     "description": "blabla",
     "comments": [
-      {"comment": "Un commentaire inutile", "rate": 3, "date": "20160102"},
-      {"comment": "Site génial", "rate": 5, "date": "20160102"},
-      {"comment": "Juste un indexeur de contenu", "rate": 1, "date": "20160102"}
+      {"comment": "Rien à en dire", "rate": 3, "date": "2016-04-12T09:30:00.000Z"},
+      {"comment": "Site génial", "rate": 5, "date": "2016-04-13T10:00:00.000Z"},
+      {"comment": "Juste un indexeur de contenu", "rate": 1, "date": "2016-04-14T11:25:00.000Z"}
     ],
     "rated":2,
-    "keywords": ["tata"],
+    "keywords": [{"text": "tata"}, {"text": "toto"}],
     "contributions":6
   },
   {
@@ -31,12 +30,11 @@
     "url":"http://www.twitter.com",
     "description": "blabla",
     "comments": [
-      {"comment": "Un commentaire inutile", "rate": 3, "date": "20160102"},
-      {"comment": "Site génial", "rate": 5, "date": "20160102"},
-      {"comment": "Juste un indexeur de contenu", "rate": 1, "date": "20160102"}
+      {"comment": "Un autre commentaire inutile", "rate": 3, "date": "2016-04-12T09:30:00.000Z"},
+      {"comment": "Site génial", "rate": 5, "date": "2016-04-12T09:30:00.000Z"}
     ],
     "rated":3,
-    "keywords": ["tweet"],
+    "keywords": [{"text": "tweet"}],
     "contributions":8
   }
 
