@@ -61,7 +61,7 @@
   </form>
 </div>
 
-<div class="col-xs-6">
+<div class="col-md-6 col-xs-12">
 
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formUrl">
     Ajouter une url
@@ -72,14 +72,16 @@
   <table class="table">
     <thead>
     <tr>
+      <th>Delete</th>
       <th>Nom</th>
       <th>URL</th>
       <th>Keywords</th>
     </tr>
     </thead>
-    <tr ng-repeat="data in main.service.data | filter:search" ng-click='main.go(data.name)'>
-      <td>{{data.name}}</td>
-      <td>{{data.url}}</td>
+    <tr ng-repeat="data in main.service.data | filter:search track by $index" >
+      <td><button class="btn btn-danger" ng-click='main.removeItem(data.name)'>x</button></td>
+      <td ng-click='main.go(data.name)'>{{data.name}}</td>
+      <td ng-click='main.go(data.name)'>{{data.url}}</td>
       <td><span ng-repeat="k in data.keywords">{{k.text}} </span></td>
     </tr>
   </table>

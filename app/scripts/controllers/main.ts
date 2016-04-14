@@ -18,6 +18,7 @@ module appApp {
     public static $inject = ['$scope', '$http', 'getUrl', '$location'];
     public scope:IMainScope;
     public service:Geturl;
+    public static idUrl:number = 0;
 
     constructor(private $scope:IMainScope, private $http : IHttpService, private getUrl : Geturl, private $location: ILocationService) {
       this.scope = $scope;
@@ -25,6 +26,8 @@ module appApp {
     }
 
     private save: any = () => {
+      MainCtrl.idUrl +=1;
+      this.scope.notapaf.id=MainCtrl.idUrl;
       this.scope.notapaf.comments = [];
       this.service.addData(this.scope.notapaf);
       this.scope.notapaf = {} as model.INotapaf;
@@ -41,6 +44,12 @@ module appApp {
 
     private clear : any = () => {
       this.service.clearData();
+      this.$location.path('/');
+    }
+
+    private removeItem : any  = (name: string) => {
+      this.service.removeItem(name);
+      this.$location.path('/');
     }
   }
 }
